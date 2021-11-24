@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+.card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: yellow;
+    margin: 20px;
+    border: 1px solid yellow;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dashboard {
+    background-color: dodgerblue;
+    margin: 20px auto;
+    border: 1px solid dodgerblue;
+    min-height: 272px;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+    border: none;
+    background-color: dodgerblue;
+    color: black;
+    font-size: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card input {
+    background-color: yellow;
+}
+.card-holder {
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+hr {
+    width: 100%;
 }
