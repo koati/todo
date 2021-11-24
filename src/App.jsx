@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
 import Dashboard from './Components/Dashboard';
-import { DragDropContext } from 'react-beautiful-dnd';
-
 
 const nextId = arr => arr.reduce((acc, obj)=>Math.max(acc, obj.id), 0) + 1
 
@@ -50,9 +48,8 @@ const App = () => {
 
     return (
         <div id="app-container">
-            <DragDropContext onDragEnd={handleOnDragEnd}>
-            {dashboards.map(dashboard => <Dashboard key={dashboard.id} dashboard={dashboard} todos={todos.filter(todo=>todo.dashId===dashboard.id)} {...functions} />)}
-            </DragDropContext>
+            {dashboards.map(dashboard => 
+                <Dashboard key={dashboard.id} dashboard={dashboard} todos={todos.filter(todo=>todo.dashId===dashboard.id)} {...functions} />)}
             <button onClick={addDashboard}>+</button>
         </div>
     )
