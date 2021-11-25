@@ -37,14 +37,7 @@ const App = () => {
         obj.description = description
         setTodos(newArr)
     }
-    const functions = { addDashboard, addTodo, removeTodo, renameDashboard, modifyTodo }
-
-    function handleOnDragEnd(result) {
-        const newArr = [...todos]
-        const obj = newArr.find(item=>item.id===result.draggableId*1)
-        obj.dashId = result.destination.droppableId*1
-        setTodos(newArr)
-    }
+    const functions = { addTodo, removeTodo, renameDashboard, modifyTodo }
 
     return (
         <div id="app-container">

@@ -12,7 +12,7 @@ const Card = ({card, removeTodo, modifyTodo}) => {
     }
     const cancel = () => {
         setName(card.name)
-        setDesc(card.desc)
+        setDesc(card.description)
         setEdit(false)
     }
 
@@ -21,7 +21,7 @@ const Card = ({card, removeTodo, modifyTodo}) => {
             {edit && <input value={name} onChange={(e)=>setName(e.target.value)} placeholder='Type a name' />}
             {!edit && <h3>{card.name}</h3>}
 
-            {edit && visible && <textarea value={desc} onChange={(e)=>setDesc(e.target.value)} cols="30" rows="10"  placeholder='Type the description' />}
+            {edit && visible && <textarea value={desc} onChange={(e)=>setDesc(e.target.value)} cols="30" rows="10" placeholder='Type the description' />}
             {!edit && visible && <p>{card.description}</p>}
 
             <div className="buttonbar">
