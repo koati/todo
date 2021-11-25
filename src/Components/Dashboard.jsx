@@ -20,7 +20,7 @@ const Dashboard = ({dashboard, todos, ...fn}) => {
             {edit && <input value={value} onChange={e=>setValue(e.target.value)} />}
             {!edit && <h2>{dashboard.name}</h2>}
             <div className='card-holder'>
-                {todos.map(card => <Card card={card} removeTodo={fn.removeTodo} modifyTodo={fn.modifyTodo}/>)}
+                {todos.map(card => <Card key={card.id} card={card} removeTodo={fn.removeTodo} modifyTodo={fn.modifyTodo}/>)}
             </div>
             {!edit && <button onClick={()=>setEdit(true)}>Edit</button>}
             {edit && <button onClick={cancel}>Cancel</button>}

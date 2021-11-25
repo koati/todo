@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Dashboard from './Components/Dashboard';
 
-const nextId = arr => arr.reduce((acc, obj)=>Math.max(acc, obj.id), 0) + 1
+const nextId = arr => arr.reduce((a, b) => a.id > b.id ? a : b).id + 1
 
 const demoDashboards= [
     {id: 1, name: "Bevásárlás" },
