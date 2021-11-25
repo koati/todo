@@ -24,19 +24,8 @@ const App = () => {
     const addDashboard = () => setDashboards([...dashboards, {id: nextId(dashboards), name: 'Untilted dashboard'}])
     const addTodo = (id) => setTodos([...todos, {id: nextId(todos), dashId: id}])
     const removeTodo = (id) => setTodos(todos.filter(todo=>todo.id !== id))
-    const renameDashboard = (id, name) => {
-        const newArr = [...dashboards]
-        const obj = newArr.find(item=>item.id===id)
-        obj.name = name
-        setDashboards(newArr)
-    }
-    const modifyTodo = (id, name, description) => {
-        const newArr = [...todos]
-        const obj = newArr.find(item=>item.id===id)
-        obj.name = name
-        obj.description = description
-        setTodos(newArr)
-    }
+    const renameDashboard = (id, name) => setDashboards(dashboards.map(board=>board.id===id ? {...board, name: name} : board))
+    const modifyTodo = (id, name, description) => setTodos(todos.map(todo=>todo.id===id ? {...todo, name: name, description: description} : todo))
     const functions = { addTodo, removeTodo, renameDashboard, modifyTodo }
 
     return (
